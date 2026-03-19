@@ -1,3 +1,4 @@
+/* Contenitore principale centrato con flex. */
 #main-div{
     display: flex;
     flex-direction: column;
@@ -6,6 +7,7 @@
 
 }
 
+/* Box con input e pulsante. */
 #request-div{
     margin-top: 190px;
     display: flex;
@@ -17,6 +19,7 @@
     background: linear-gradient(180deg, blue, green);
 }
 
+/* Spazio tra input e bottone. */
 #submit{
     margin-top: 20px;
 }

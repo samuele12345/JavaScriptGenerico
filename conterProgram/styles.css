@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    forced-color-adjust: none; /* nel caso in cui ci siano temi forzati nel browser 
-    evita che i colori si sovrascrivano alle indicazioni di css */
+    /* Evita che alcuni temi ad alto contrasto sovrascrivano i colori scelti. */
+    forced-color-adjust: none;
 }
 
+/* Card del contatore centrata nella pagina. */
 #main-div{
     margin: 200px auto; /* 200 top e bottom e auto left e right */
     display: flex;
@@ -19,6 +20,7 @@
     background: #ffb366;
 }
 
+/* Disposizione orizzontale dei pulsanti. */
 #button-divs{
     display: flex;
     flex-direction: row;
@@ -30,11 +32,13 @@
     
 }
 
+    /* Numero visualizzato al centro della card. */
 #number-div{
     font-size: 40px;
     padding-top: 10px;
 }
 
+/* Stile base condiviso dai tre pulsanti. */
 .buttons{
     padding: 2px 4px;
     border-radius: 10px;

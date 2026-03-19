@@ -1,9 +1,10 @@
-/*esegue il codice solo quando l’HTML è stato caricato tutto, stessa funzione di defer 
-
-addEventListener serve a “mettere in ascolto” un elemento per un evento, e dire 
-quale funzione eseguire quando quell’evento accade.*/
+/*
+Questo script gestisce un piccolo contatore numerico.
+Il codice parte quando il DOM e pronto, cosi gli elementi HTML esistono gia.
+*/
 
 document.addEventListener("DOMContentLoaded", () =>{
+    // Riferimenti ai pulsanti e al numero mostrato nella pagina.
     const buttonDec = document.querySelector("#dec");
     const buttonRes = document.querySelector("#res");
     const buttonInc = document.querySelector("#inc");
@@ -12,7 +13,8 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     buttonDec.addEventListener("click", () =>{
         counter--;
-        numb.textContent = counter; // modifica contenuto del let testuale
+        // Aggiorna il numero mostrato dopo il decremento.
+        numb.textContent = counter;
     });
 
     buttonRes.addEventListener("click", () =>{

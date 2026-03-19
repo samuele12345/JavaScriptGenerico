@@ -1,0 +1,35 @@
+## Appunti progetto
+
+## File gia commentati (da non toccare)
+
+conterProgram/index.html
+conterProgram/script.js
+conterProgram/styles.css
+conversioneLet/conv.js
+math/script.js
+ottenereInput/index.html
+ottenereInput/script.js
+ottenereInput/styles.css
+payment/index.html
+payment/script.js
+payment/styles.css
+random/index.html
+random/script.js
+random/styles.css
+strings/script.js
+guessTheNumber/index.html
+guessTheNumber/script.js
+guessTheNumber/styles.css
+temperatureCoverter/index.html
+temperatureCoverter/script.js
+temperatureCoverter/styles.css
+array/script.js
+spreadOperator/server.js
+
+## Promemoria CSS
+
+- Colore bianco leggermente piu scuro del default: #f5f5f5
+- Per disattivare lo scroll orizzontale solo in una pagina:
+	- HTML: aggiungi una classe al body, ad esempio class="no-scroll-x"
+	- CSS: .no-scroll-x { overflow-x: hidden; }
+
