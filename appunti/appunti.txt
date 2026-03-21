@@ -25,6 +25,14 @@ temperatureCoverter/script.js
 temperatureCoverter/styles.css
 array/script.js
 spreadOperator/server.js
+counterProgram/index.html
+counterProgram/script.js
+counterProgram/styles.css
+randomPasGen/index.html
+randomPasGen/script.js
+randomPasGen/styles.css
+restParameters/script.js
+spreadOperator/script.js
 
 ## Promemoria CSS
 
