@@ -40,3 +40,5 @@ console.log(x + ", " + x1 + ", " + x2 + " massimo: " + max);
 console.log(x + ", " + x1 + ", " + x2 + " minimo: " + min);
 console.log("pi greco: " + pi);
 console.log("e: " + e);
+// stampa pi greco con tre valori dopo la virgola
+console.log("pi greco: " + pi.toFixed(3));

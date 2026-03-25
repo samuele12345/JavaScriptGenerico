@@ -33,6 +33,21 @@ randomPasGen/script.js
 randomPasGen/styles.css
 restParameters/script.js
 spreadOperator/script.js
+arrowFunctions/script.js
+callBack/script.js
+class/script.js
+costruttore/script.js
+filter/script.js
+forEach/script.js
+functionExpression/script.js
+getterSetter/script.js
+inheritance/script.js
+map/script.js
+objects/script.js
+reduce/script.js
+static/script.js
+super/script.js
+this/script.js
 
 ## Promemoria CSS
 

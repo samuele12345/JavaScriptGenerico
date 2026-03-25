@@ -31,3 +31,15 @@ console.log("array in ordine alfabetico: " + array.sort());
 
 // reverse() inverte l'ordine corrente dell'array.
 console.log("array in ordine alfabetico contrario: " + array.sort().reverse());
+
+// at() ritorna un elemento di un array ricevendo l'indice in cui si trova
+console.log("elemento all'indice 2: " + array.at(2));
+
+// ritorna true o false se contiene oppure no l'elemento passato
+let boolResult = array.includes("primo");
+
+if(boolResult){
+    console.log("l'array contiene l'elemento")
+}else{
+    console.log("l'array non contiene l'elemento")
+}
