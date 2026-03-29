@@ -1,0 +1,4 @@
+{
+  "description": "Configurazione del progetto JavaScript con ES6 modules. 'type: module' indica a Node.js di trattare i file .js come ES modules (import/export) anziché CommonJS, evitando warning di performance.",
+  "type": "module"
+}

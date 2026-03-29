@@ -21,3 +21,13 @@ console.log(date.getHours()) // per ottenere l'ora in date
 console.log(date.getMinutes()) // per ottenere i minuti in date
 console.log(date.getSeconds()) // per ottenere i secondi in date
 console.log(date.getDay()) // per ottenere il giorno della settimana che corrisponde alla data
+
+
+date.setFullYear(2011) // per settare l'anno in date
+date.setMonth(3) // per settare il mese in date
+date.setDate(12) // per settare il giorno in date
+date.setHours(4) // per settare l'ora in date
+date.setMinutes(52) // per settare i minuti in date
+date.setSeconds(21) // per settare i secondi in date
+
+console.log(date);
