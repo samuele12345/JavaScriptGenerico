@@ -17,6 +17,7 @@ L'obiettivo e raccogliere esempi piccoli e progressivi per capire meglio la sint
 - costruttore: funzioni costruttore
 - date: gestione di date e orari
 - destructoring: destrutturazione di array e oggetti
+- domSelectors: selezione degli elementi DOM con getElement e querySelector
 - filter: metodo filter
 - forEach: metodo forEach
 - functionExpression: function expression
@@ -35,7 +36,8 @@ L'obiettivo e raccogliere esempi piccoli e progressivi per capire meglio la sint
 - super: uso di super
 - this: keyword this
 
-Ogni sottocartella contiene uno script indipendente eseguibile con Node.js.
+Quasi ogni sottocartella contiene uno script indipendente eseguibile con Node.js.
+Le cartelle che lavorano con il DOM del browser, come domSelectors, vanno invece provate in una pagina HTML o nella console del browser.
 
 ## English
 
@@ -54,6 +56,7 @@ The goal is to collect small, progressive examples to better understand JavaScri
 - costruttore: constructor functions
 - date: date and time handling
 - destructoring: array and object destructuring
+- domSelectors: DOM element selection with getElement methods and query selectors
 - filter: filter method
 - forEach: forEach method
 - functionExpression: function expressions
@@ -72,4 +75,5 @@ The goal is to collect small, progressive examples to better understand JavaScri
 - super: super keyword usage
 - this: this keyword
 
-Each subfolder contains an independent script that can be run with Node.js.
+Most subfolders contain an independent script that can be run with Node.js.
+Folders that work with the browser DOM, such as domSelectors, should instead be tested in an HTML page or in the browser console.
