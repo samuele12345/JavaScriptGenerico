@@ -17,12 +17,14 @@ L'obiettivo e raccogliere esempi piccoli e progressivi per capire meglio la sint
 - costruttore: funzioni costruttore
 - date: gestione di date e orari
 - destructoring: destrutturazione di array e oggetti
+- domNavigation: navigazione del DOM tra parent, children e siblings
 - domSelectors: selezione degli elementi DOM con getElement e querySelector
 - filter: metodo filter
 - forEach: metodo forEach
 - functionExpression: function expression
 - getterSetter: getter e setter
 - inheritance: ereditarieta tra classi
+- keyUpDown: movimento di un elemento con tastiera, limiti dinamici e diagonali
 - map: metodo map
 - math: oggetto Math e funzioni principali
 - nestedObject: oggetti annidati
@@ -38,6 +40,15 @@ L'obiettivo e raccogliere esempi piccoli e progressivi per capire meglio la sint
 
 Quasi ogni sottocartella contiene uno script indipendente eseguibile con Node.js.
 Le cartelle che lavorano con il DOM del browser, come domSelectors, vanno invece provate in una pagina HTML o nella console del browser.
+
+### Nota su keyUpDown
+
+La cartella keyUpDown contiene esempi di movimento DOM controllato da tastiera.
+
+- script.js: versione base, con movimento a step singoli per ogni keydown
+- script2.js: versione evoluta, con stato dei tasti premuti, aggiornamento continuo tramite requestAnimationFrame e movimento diagonale
+
+Questi file sono pensati per essere eseguiti nel browser insieme a index.html e styles.css.
 
 ## English
 
@@ -56,12 +67,14 @@ The goal is to collect small, progressive examples to better understand JavaScri
 - costruttore: constructor functions
 - date: date and time handling
 - destructoring: array and object destructuring
+- domNavigation: DOM navigation with parent, children, and sibling access
 - domSelectors: DOM element selection with getElement methods and query selectors
 - filter: filter method
 - forEach: forEach method
 - functionExpression: function expressions
 - getterSetter: getters and setters
 - inheritance: class inheritance
+- keyUpDown: keyboard-driven element movement, dynamic bounds, and diagonal motion
 - map: map method
 - math: Math object and main functions
 - nestedObject: nested objects
@@ -77,3 +90,12 @@ The goal is to collect small, progressive examples to better understand JavaScri
 
 Most subfolders contain an independent script that can be run with Node.js.
 Folders that work with the browser DOM, such as domSelectors, should instead be tested in an HTML page or in the browser console.
+
+### Note on keyUpDown
+
+The keyUpDown folder contains examples of keyboard-controlled DOM movement.
+
+- script.js: basic version, with one movement step for each keydown event
+- script2.js: extended version, with pressed-key state, continuous updates via requestAnimationFrame, and diagonal movement
+
+These files are meant to run in the browser together with index.html and styles.css.

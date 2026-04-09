@@ -1,0 +1,46 @@
+CLASSIFICA PRATICA - DOM NAVIGATION
+
+1. Da sapere bene
+
+parentElement
+- utile quando parti da un elemento interno e vuoi risalire al contenitore diretto
+- molto comune con eventi, bottoni, card, liste, form
+
+children
+- utile quando hai gia' il contenitore e vuoi lavorare sui suoi figli
+- spesso comodo insieme a Array.from(...)
+
+2. Utili ma secondari
+
+firstElementChild
+- comodo se vuoi il primo elemento di un contenitore senza fare una nuova query
+
+lastElementChild
+- comodo se vuoi l'ultimo elemento di un contenitore senza fare una nuova query
+
+nextElementSibling
+- utile quando vuoi passare all'elemento successivo partendo da uno gia' noto
+
+previousElementSibling
+- utile quando vuoi passare all'elemento precedente partendo da uno gia' noto
+
+3. Valutazione pratica reale
+
+Queste proprieta' non sono fondamentali.
+Nella maggior parte dei casi possono essere sostituite da querySelector o querySelectorAll.
+
+Pero' restano utili in 3 situazioni:
+- quando hai gia' un riferimento a un elemento e non vuoi fare una nuova query
+- quando devi descrivere una relazione nel DOM: parent, figlio, fratello precedente, fratello successivo
+- quando vuoi scrivere codice piu' diretto e leggibile
+
+4. Conclusione semplice
+
+Se devi cercare elementi nel DOM:
+querySelector e querySelectorAll di solito bastano.
+
+Se devi muoverti a partire da un nodo che hai gia':
+le proprieta' di DOM navigation sono spesso piu' immediate.
+
+Se devi iterare, filtrare o mappare:
+conviene spesso usare children o querySelectorAll e poi trasformare il risultato in array.
