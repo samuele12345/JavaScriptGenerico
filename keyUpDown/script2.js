@@ -7,6 +7,8 @@
 // 4. Blocchiamo il movimento entro i limiti disponibili nel viewport.
 // 5. Applichiamo le coordinate finali a `left` e `bottom`, ottenendo anche
 //    movimenti diagonali quando due frecce restano premute insieme.
+
+/*
 const ball = document.querySelector("#sfera");
 const title = document.querySelector("#tit-1");
 
@@ -26,6 +28,9 @@ const pressedKeys = {
 
 // Coordinate correnti rispetto alla posizione iniziale, che e' il centro della pagina.
 // `x` gestisce lo spostamento orizzontale, `y` quello verticale.
+// All'inizio valgono entrambi `0`, quindi la sfera parte dalla posizione iniziale
+// definita dal CSS, cioe' il centro. Da li' `y` cresce andando verso l'alto e
+// diminuisce andando verso il basso.
 let x = 0;
 let y = 0;
 
@@ -44,7 +49,13 @@ function updatePosition() {
     const { maxX, maxY } = getLimits();
 
     // Se la freccia su e' premuta, aumentiamo `y`.
-    // `Math.min` blocca il valore al limite superiore senza bisogno di un if separato.
+    // Esempio: se `y` vale 20 e `movement` vale 5, il nuovo valore candidato e' 25.
+    // Usiamo `Math.min(y + movement, maxY)` per scegliere il numero piu' piccolo
+    // tra il nuovo valore e il limite massimo consentito.
+    // Quindi:
+    // - finche' `y + movement` e' minore di `maxY`, la sfera continua a salire;
+    // - quando `y + movement` supererebbe `maxY`, viene usato `maxY`.
+    // In pratica `y` non puo' mai diventare maggiore del bordo superiore disponibile.
     if (pressedKeys.ArrowUp) {
         y = Math.min(y + movement, maxY);
     }
@@ -70,8 +81,11 @@ function updatePosition() {
     ball.style.left = `${x}px`;
     ball.style.bottom = `${y}px`;
 
-    // Richiama la stessa funzione al frame successivo.
-    // Questo crea un ciclo di aggiornamento continuo molto adatto al movimento.
+    // `requestAnimationFrame(updatePosition)` dice al browser:
+    // "esegui di nuovo `updatePosition` al prossimo frame di disegno".
+    // In questo modo si crea un loop di aggiornamento fluido e sincronizzato
+    // con il refresh dello schermo, piu' adatto alle animazioni rispetto a un timer fisso.
+    // Finche' la pagina resta attiva, `updatePosition` continua quindi a richiamarsi da sola.
     requestAnimationFrame(updatePosition);
 }
 
@@ -89,6 +103,13 @@ document.addEventListener("keydown", event => {
     event.preventDefault();
 
     // Memorizziamo che questo tasto e' attualmente premuto.
+    // `pressedKeys` non e' un array: e' un oggetto con proprieta' come
+    // `ArrowUp`, `ArrowDown`, `ArrowLeft`, `ArrowRight`.
+    // La sintassi con parentesi quadre non indica per forza un array:
+    // negli oggetti serve anche per accedere a una proprieta' usando un nome dinamico.
+    // Qui `event.key` contiene una stringa, per esempio `"ArrowUp"`, quindi:
+    // `pressedKeys[event.key] = true` equivale a scrivere `pressedKeys.ArrowUp = true`
+    // quando il tasto premuto e' proprio ArrowUp.
     pressedKeys[event.key] = true;
 
     // Aggiorniamo il testo solo come feedback visivo.
@@ -106,7 +127,15 @@ document.addEventListener("keyup", event => {
     // Segniamo il tasto come non piu' premuto.
     pressedKeys[event.key] = false;
 
-    // Se nessuna freccia e' ancora attiva, torniamo al testo iniziale.
+    // `Object.values(pressedKeys)` prende tutti i valori dell'oggetto e li mette in un array.
+    // In questo caso otteniamo qualcosa come `[true, false, false, true]`.
+    // `some(Boolean)` controlla se almeno uno degli elementi dell'array e' "truthy".
+    // Qui equivale a chiedere: "c'e' almeno una freccia ancora premuta?".
+    // `Boolean` viene usata come funzione di controllo:
+    // - `Boolean(true)` restituisce `true`
+    // - `Boolean(false)` restituisce `false`
+    // Il `!` davanti inverte il risultato, quindi l'if entra solo quando
+    // nessun valore dell'oggetto e' `true`, cioe' quando tutte le frecce sono rilasciate.
     if (!Object.values(pressedKeys).some(Boolean)) {
         title.textContent = "Move Me!";
     }
@@ -116,3 +145,80 @@ document.addEventListener("keyup", event => {
 // Anche se all'inizio nessun tasto e' premuto, il frame loop rimane pronto
 // a reagire non appena cambia lo stato di `pressedKeys`.
 updatePosition();
+
+*/
+
+const ball = document.querySelector("#sfera");
+const tit = document.querySelector("#tit-1");
+
+const movement = 5;
+
+const pressedKeys = {
+    ArrowUp: false,
+    ArrowDown: false,
+    ArrowLeft: false,
+    ArrowRight: false,
+}
+
+let x = 0;
+let y = 0;
+
+function getLimits(){
+    const maxX = (document.body.clientWidth - ball.clientWidth) / 2;
+    const maxY = (document.body.clientHeight - ball.clientHeight) / 2;
+    return {maxX, maxY}
+}
+
+function updateMove(){
+    const {maxX, maxY} = getLimits();
+
+    if(pressedKeys.ArrowUp){
+        y = Math.min(y + movement, maxY)
+    }
+
+    if(pressedKeys.ArrowDown){
+        y = Math.max(y - movement, -maxY)
+    }
+
+    if(pressedKeys.ArrowRight){
+        x = Math.min(x + movement, maxX)
+    }
+
+    if(pressedKeys.ArrowLeft){
+        x = Math.max(x - movement, -maxX)
+    }
+
+    ball.style.left = `${x}px`
+    ball.style.bottom = `${y}px`
+
+    requestAnimationFrame(updateMove);
+}
+
+document.addEventListener("keydown", event => {
+    if(!Object.hasOwn(pressedKeys, event.key)){
+        return;
+    }
+
+    event.preventDefault();
+
+    pressedKeys[event.key] = true;
+
+    tit.textContent = "Mooving..."
+});
+
+document.addEventListener("keyup", event => {
+    if(!Object.hasOwn(pressedKeys, event.key)){
+        return;
+    }
+
+    event.preventDefault();
+
+    pressedKeys[event.key] = false;
+
+    if(!Object.values(pressedKeys).some(Boolean)){
+        tit.textContent = "Move me!"
+    }
+});
+
+
+updateMove()

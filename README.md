@@ -13,6 +13,7 @@ L'obiettivo e raccogliere esempi piccoli e progressivi per capire meglio la sint
 - arrowFunctions: funzioni freccia
 - callBack: uso delle callback
 - class: classi in JavaScript
+- classList: uso pratico di classList (add/remove/toggle/replace/contains) con DOM
 - conversioneLet: conversione tra tipi primitivi
 - costruttore: funzioni costruttore
 - date: gestione di date e orari
@@ -41,6 +42,14 @@ L'obiettivo e raccogliere esempi piccoli e progressivi per capire meglio la sint
 Quasi ogni sottocartella contiene uno script indipendente eseguibile con Node.js.
 Le cartelle che lavorano con il DOM del browser, come domSelectors, vanno invece provate in una pagina HTML o nella console del browser.
 
+### Nota su classList
+
+La cartella classList contiene un mini esempio DOM con bottone e titolo.
+
+- click sul bottone: ciclo dei colori (blue, green, red) e aggiornamento del testo del titolo
+- hover/mouseout: applicazione/rimozione di stato visuale tramite classe e stile inline
+- obiettivo: esercitarsi con i metodi classList in un caso reale e immediato
+
 ### Nota su keyUpDown
 
 La cartella keyUpDown contiene esempi di movimento DOM controllato da tastiera.
@@ -63,6 +72,7 @@ The goal is to collect small, progressive examples to better understand JavaScri
 - arrowFunctions: arrow functions
 - callBack: callback usage
 - class: JavaScript classes
+- classList: practical classList usage (add/remove/toggle/replace/contains) with the DOM
 - conversioneLet: primitive type conversion
 - costruttore: constructor functions
 - date: date and time handling
@@ -90,6 +100,14 @@ The goal is to collect small, progressive examples to better understand JavaScri
 
 Most subfolders contain an independent script that can be run with Node.js.
 Folders that work with the browser DOM, such as domSelectors, should instead be tested in an HTML page or in the browser console.
+
+### Note on classList
+
+The classList folder contains a small DOM example with a button and title.
+
+- button click: color cycle (blue, green, red) and title text update
+- hover/mouseout: visual state applied/removed through class and inline style
+- goal: practice classList methods in a simple real-world interaction
 
 ### Note on keyUpDown
 

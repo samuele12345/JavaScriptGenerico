@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centra il contenuto della pagina sia in orizzontale che in verticale. */
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* Div principale stilizzato come un cerchio cliccabile. */
+#div-img{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(1, 1, 214);
+    border-radius: 200px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Effetto visivo al passaggio del mouse. */
+#div-img:hover{
+    background: blue;
+    color: rgb(179, 11, 11);
+    text-shadow: 1px 2px 5px black;
+}
+
+/* Pulsante inizialmente nascosto, mostrato via JavaScript. */
+#but{
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: auto;
+    right: auto;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    background: rgb(240, 33, 33);
+}
+
+/* Leggera animazione al passaggio del mouse sul pulsante. */
+#but:hover{
+    background: rgb(230, 91, 91);
+    scale: 1.05;
+}
+
+
+
