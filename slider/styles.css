@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-family: "Public Sans Web", sans-serif;
+    background: rgb(229, 226, 226);
+    overflow-x: hidden;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: auto;
+    margin: 10px auto auto auto;
+    background: rgba(138, 153, 182, 0.695);
+    position: sticky;
+    top: 10px;
+    z-index: 999;
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#slider1{
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    )
+}
+
+#slider1::-webkit-scrollbar{
+    display: none;
+}
+
+#slides1{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: auto 50px;
+}
+
+.slide1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 600px;
+    gap: 15px;
+    background: rgb(105, 116, 138);
+    padding: 20px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 3px rgb(99, 97, 97);
+    margin: 10px auto;
+    /* Stato base: tutte le slide partono a scala normale. */
+    transform: scale(1);
+    /* Transizione morbida quando una slide diventa attiva o torna normale. */
+    transition: transform 220ms ease;
+}
+
+.slide1:hover{
+    cursor: grab;
+}
+
+.tit-s1{
+    color: rgb(221, 237, 241);
+}
+
+.p-s1{
+    text-align: center;
+    color: black;
+}
+
+#main-title{
+    margin: 20px auto;
+    color: rgba(12, 12, 12, 0.596);
+    text-shadow: 1px 2px 3px rgba(186, 181, 181, 0.596);
+}
+
+#slider2{
+    margin: auto;
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    overflow-y: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 2%,
+        black 98%,
+        transparent
+    )
+}
+
+#slider2::-webkit-scrollbar{
+    display: none;
+}
+
+#slides2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    width: auto;
+    gap: 45px;
+    margin: auto 25px;
+}
+
+.slide2{
+    height: auto;
+    width: auto;
+
+}
+
+.slide2 img{
+    object-fit: cover;
+    height: 400px;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 3px 4px 3px rgb(79, 78, 78);
+    user-select: none;
+}
+
+#cont-but-slid{
+    margin: 20px auto 10px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: center;
+    gap: 0px;
+
+    width: 50%;
+}
+
+#arrowLeft{
+    width: 30px;
+    height: 30px;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    transform: rotate(45deg);
+}
+
+#arrowLeft:hover:not(.disabled){
+    border-left: 2px solid rgba(58, 58, 226, 0.526);
+    border-bottom: 2px solid rgba(58, 58, 226, 0.526);
+}
+
+#arrowRight{
+    width: 30px;
+    height: 30px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    transform: rotate(-45deg);
+}
+
+#arrowRight:hover:not(.disabled){
+    border-right: 2px solid rgba(58, 58, 226, 0.526);
+    border-bottom: 2px solid rgba(58, 58, 226, 0.526);
+}
+
+.arrow{
+    cursor: pointer;
+    transition: border-color 120ms ease, opacity 120ms ease;
+}
+
+.arrow.disabled{
+    cursor: default;
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+#arrowLeft.disabled,
+#arrowLeft.disabled:hover{
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#arrowRight.disabled,
+#arrowRight.disabled:hover{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+
+.slide2.activate{
+    animation: act 0.5s ease-out;
+}
+
+@keyframes act{
+    0%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#par-uix{
+    margin-bottom: 140px;
+}
+
+.titles{
+    margin-top: 150px;
+}
