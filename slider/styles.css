@@ -24,7 +24,7 @@ header{
     height: auto;
     margin: 10px auto auto auto;
     background: rgba(138, 153, 182, 0.695);
-    position: sticky;
+    position: fixed;
     top: 10px;
     z-index: 999;
     border-radius: 5px;
@@ -42,7 +42,15 @@ main{
     width: 100%;
 }
 
-#slider1{
+#slider3-desc{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider1{
     width: 70%;
     height: auto;
     display: flex;
@@ -61,7 +69,7 @@ main{
     )
 }
 
-#slider1::-webkit-scrollbar{
+.slider1::-webkit-scrollbar{
     display: none;
 }
 
@@ -91,10 +99,19 @@ main{
     transform: scale(1);
     /* Transizione morbida quando una slide diventa attiva o torna normale. */
     transition: transform 220ms ease;
+    user-select: none;
 }
 
-.slide1:hover{
+.slider1:hover{
     cursor: grab;
+}
+
+.slider1.grabbing{
+    cursor: grabbing;
+}
+
+#p-property{
+    margin-top: 10px;
 }
 
 .tit-s1{
@@ -235,9 +252,65 @@ main{
 }
 
 #par-uix{
-    margin-bottom: 140px;
+    margin-bottom: 170px;
 }
 
 .titles{
     margin-top: 150px;
+    margin-bottom: 20px;
+}
+
+.slider3{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides3{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    height: 700px;
+}
+
+.slide3{
+    width: 100%;
+    display: none;
+    object-fit: cover;
+}
+
+img.active{
+    display: block;
+}
+
+.buttons{
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: rgba(98, 95, 95, 0.318);
+    width: 70px;
+    height: 200px;
+    color: rgba(205, 200, 200, 0.293);
+    font-size: 80px;
+}
+
+.buttons:hover{
+    cursor: pointer;
+    background: rgba(32, 32, 32, 0.662);
+    color: rgba(238, 234, 234, 0.695);
+}
+
+#prev{
+    left: 30px;
+}
+
+#next{
+    right: 30px;
 }

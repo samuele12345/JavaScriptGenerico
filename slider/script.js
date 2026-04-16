@@ -1,8 +1,14 @@
-const slider = document.querySelector("#slider1")
+const slider = document.querySelector(".slider1")
 const slider2 = document.querySelector("#slider2")
 const arrowLeft = document.querySelector("#arrowLeft")
 const arrowRight = document.querySelector("#arrowRight")
-
+const slides3 = document.querySelectorAll(".slides3 img");
+const pProp = document.querySelector("#p-property")
+const imgLink = [
+    '<a href="https://it.freepik.com/foto-gratuito/vista-anteriore-donna-che-mangia-hamburger-di-carne_9593137.htm">Immagine di stockking su Freepik</a>',
+    '<a href="https://it.freepik.com/foto-gratuito/vista-frontale-delizioso-cheeseburger-di-carne-con-patatine-fritte-su-sfondo-scuro-cena-hamburger-spuntino-fast-food-panino-insalata-piatto-toast_22292762.htm">Immagine di KamranAydinov su Freepik</a>',
+    '<a href="https://it.freepik.com/foto-gratuito/tre-mini-hamburger-sul-tavolo_6285311.htm">Immagine di KamranAydinov su Freepik</a>'
+]
 /*
 if(slider){
 
@@ -112,6 +118,9 @@ if(slider){
 if(slider){
     let maxScroll;
     const slides = slider.querySelectorAll(".slide1");
+    let isDown = false;
+    let startX;
+    let scrollLef;
 
     const updateSlide = () =>{
         const dimSlider = slider.getBoundingClientRect();
@@ -154,6 +163,38 @@ if(slider){
 
         updateSlide();
     })
+
+    slider.addEventListener("mousedown", (e) =>{
+        slider.classList.add("grabbing");
+        isDown = true;
+        startX = e.pageX - slider.scrollLeft;
+        scrollLef = slider.scrollLeft;
+    });
+
+    slider.addEventListener("mouseup", () =>{
+        isDown = false;
+        slider.classList.remove("grabbing");
+    });
+
+    slider.addEventListener("mouseleave", () =>{
+        isDown = false;
+        slider.classList.remove("grabbing");
+    });
+
+    slider.addEventListener("mousemove", (e) =>{
+        if(!isDown){return}
+
+        e.preventDefault();
+
+        const x = e.pageX - slider.scrollLeft;
+
+        const walk = (x - startX) * 0.65;
+
+        slider.scrollLeft = scrollLef - walk;
+
+        updateSlide();
+    });
+    
 
     slider.addEventListener("scroll", updateSlide);
 }
@@ -241,4 +282,46 @@ if(slider2){
 
     window.addEventListener("load", updateCenter);
     slider2.addEventListener("scroll", updateCenter);
+}
+
+if(slides3){
+    let slideIndex = 0;
+    let intervalId = null;
+
+    window.addEventListener("DOMContentLoaded", setDefaultSlide);
+
+    function setDefaultSlide(){
+        slides3[slideIndex].classList.add("active");
+        intervalId = setInterval(nextSlide, 5000);
+        pProp.innerHTML = `${imgLink[0]}`;
+    }
+
+    function currentSlide(index){
+        if(index >= slides3.length){
+            slideIndex = 0;
+        }else if(index < 0){
+            slideIndex = slides3.length -1;
+        }
+
+        slides3.forEach(slide =>{
+            slide.classList.remove("active");
+        });
+
+        slides3[slideIndex].classList.add("active");
+        pProp.innerHTML = `${imgLink[slideIndex]}`;
+    }
+
+    function prevSlide(){
+        clearInterval(intervalId);
+        intervalId = setInterval(nextSlide, 5000);
+        slideIndex --;
+        currentSlide(slideIndex);
+    }
+
+    function nextSlide(){
+        clearInterval(intervalId);
+        intervalId = setInterval(nextSlide, 5000);
+        slideIndex ++;
+        currentSlide(slideIndex);
+    }
 }

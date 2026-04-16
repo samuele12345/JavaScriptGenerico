@@ -13,9 +13,28 @@
             <h1 id="main-title">Sliders Examples</h1>
         </header>
         <main>
+
+            <div class="slider3">
+                <div class="slides3">
+                    <img class="slide3" src="img/stockking.jpg" alt="img1">
+                    <img class="slide3" src="img/KamranAydinov.jpg" alt="img2">
+                    <img class="slide3" src="img/KamranAydinov2.jpg" alt="img3">
+                </div>
+
+                <button class="buttons" id="prev" onclick="prevSlide()">&#10094</button>
+                <button class="buttons" id="next" onclick="nextSlide()">&#10095</button>
+            </div>
+            <p id="p-property"></p>
             
-            <h2 class="titles">Slider1: Active Slide</h2>
-            <div id="slider1">
+            <div id="slider3-desc">
+                <h2 class="titles">Slider1: Auto/manual Slide</h2>
+                <p>Slider displayed before, the user can wait for the next slide (5 seconds) or click the previous or next arrows</p>
+                <p id="p-property"></p>
+            </div>
+            
+            <h2 class="titles">Slider2: Active Slide</h2>
+            <p>The user can scroll through the slide using the tab or grabbing</p>
+            <div class="slider1">
                 <div id="slides1">
                     <div class="slide1">
                         <h2 class="tit-s1">Title</h2>
@@ -32,7 +51,8 @@
                 </div>
             </div>
 
-            <h2 class="titles">Slider2: Image Carousel</h2>
+            <h2 class="titles">Slider3: Image Carousel</h2>
+            <p>The user can scroll through the slide using the tab or the arrows</p>
             <div id="cont-but-slid">
                 <div class="arrow" id="arrowLeft"></div>
                 <div id="slider2">
