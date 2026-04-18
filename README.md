@@ -2,7 +2,7 @@
 
 ## Italiano
 
-Questa cartella contiene appunti ed esercizi di teoria JavaScript, organizzati per argomento. Ispirato dal corso di Bro Code su YouTube.
+Questa cartella contiene appunti ed esercizi di teoria JavaScript, organizzati per argomento. Ispirato dal corso di *Bro Code* su YouTube.
 
 L'obiettivo e raccogliere esempi piccoli e progressivi per capire meglio la sintassi e i concetti base/intermedi del linguaggio.
 
@@ -61,7 +61,7 @@ Questi file sono pensati per essere eseguiti nel browser insieme a index.html e 
 
 ## English
 
-This folder contains JavaScript theory notes and exercises, organized by topic. Inspired by Bro Code's YouTube course.
+This folder contains JavaScript theory notes and exercises, organized by topic. Inspired by *Bro Code*'s YouTube course.
 
 The goal is to collect small, progressive examples to better understand JavaScript syntax and core/intermediate concepts.
 
